@@ -1,18 +1,3 @@
-**CONTENT**
-
-- [py\_formatter](#py_formatter)
-- [Pactical example](#pactical-example)
-  - [Before](#before)
-- [TODO](#todo)
-
-# py_formatter
-A python script that improves the code organization of other python scripts
-
-# Pactical example
-
-## Before
-
-~~~ python
 import numpy as np
 import json
 import os
@@ -47,10 +32,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-~~~
-
-# TODO
-
-A lot of improvements can be done, here you have a list of the main ones:
-
-- 
