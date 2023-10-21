@@ -149,27 +149,20 @@ class FomratApplier:
             
 def main():
     # Check if at least one argument (excluding the script name) is provided
-    if len(sys.argv) < 2:
+    nargs = len(sys.argv)
+    if nargs < 2:
         print("Usage: python script.py target1 [target2 target3 ...]")
         return
     
     targets = []
-    for target in sys.argv:
-        if target.endswith('.py') == False:
+    # Dont apply to itself
+    for i in range(1, nargs):
+        if sys.argv[i].endswith('.py') == False:
             raise Exception('Works only with python files.')
-        targets.append(target)
+        targets.append(sys.argv[i])
 
     formatter = FomratApplier(targets)
     formatter.alphabetical_order()
 
 if __name__ == "__main__":
     main()
-
-# TODO:
-# - [ ] Print status of the progress
-# - [ ] Function FomratApplier.split_code
-#   - [ ] Decorators as part of the section below them
-#   - [ ] Code outside 'def' or 'class' considered as a section
-# - [ ] Improve format
-#   - [ ] Lines with only spaces -> ''
-#   - [ ] Two or more consecutive empty lines -> save only one
